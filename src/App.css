@@ -1,0 +1,200 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  background-color: #f0f2f5; /* Slightly lighter background */
+  color: #333;
+}
+
+.App {
+  display: flex; /* Enable flexbox for sidebar and main content */
+  max-width: 100%; /* Use full width */
+  min-height: 100vh; /* Full viewport height */
+  margin: 0;
+  padding: 0;
+  background-color: #f0f2f5; /* Match body */
+  box-shadow: none; /* Remove shadow for full-page layout */
+  border-radius: 0;
+}
+
+.sidebar {
+  width: 280px; /* Fixed width for the sidebar */
+  background-color: #2c3e50; /* Dark sidebar */
+  color: #ecf0f1; /* Light text for sidebar */
+  padding: 20px;
+  height: 100vh; /* Full height */
+  overflow-y: auto; /* Scroll if content exceeds height */
+  box-sizing: border-box;
+  position: fixed; /* Keep sidebar fixed on scroll */
+  left: 0;
+  top: 0;
+}
+
+.sidebar h2 {
+  color: #ecf0f1;
+  border-bottom: 1px solid #34495e;
+  margin-top: 0; /* Remove default margin */
+}
+
+.sidebar ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar li {
+  padding: 10px 15px;
+  cursor: pointer;
+  border-bottom: 1px solid #34495e; /* Separator for items */
+  transition: background-color 0.2s ease-in-out;
+}
+
+.sidebar li:hover {
+  background-color: #34495e; /* Hover effect */
+}
+
+.sidebar li:last-child {
+  border-bottom: none;
+}
+
+.main-content {
+  flex-grow: 1; /* Main content takes remaining space */
+  padding: 20px 30px;
+  margin-left: 280px; /* Offset by sidebar width */
+  background-color: #ffffff; /* White background for content area */
+  box-sizing: border-box;
+}
+
+.main-content h1 {
+  text-align: center;
+  color: #2c3e50;
+  margin-top: 0; /* Remove default margin */
+  margin-bottom: 30px;
+}
+
+h2 { /* General h2 styling for panels */
+  color: #34495e;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 5px;
+  margin-top: 20px; /* Adjusted margin */
+  margin-bottom: 15px;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px; /* Increased gap */
+  margin-bottom: 25px; /* Increased margin */
+}
+
+.panel {
+  flex: 1;
+  min-width: 320px; /* Slightly larger min-width */
+  padding: 20px;
+  background-color: #f9f9f9; /* Lighter panel background */
+  border: 1px solid #e0e0e0; /* Softer border */
+  border-radius: 6px; /* Slightly more rounded */
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+textarea {
+  width: 100%; /* Use full width of panel */
+  padding: 10px;
+  border: 1px solid #ccc; /* Standard border */
+  border-radius: 4px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+  margin-bottom: 10px;
+  box-sizing: border-box;
+  resize: vertical; /* Allow vertical resize */
+}
+
+button {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 5px; /* Add some space above buttons */
+}
+
+button:hover {
+  background-color: #2980b9;
+}
+
+button:disabled {
+  background-color: #bdc3c7;
+  cursor: not-allowed;
+}
+
+.output-area {
+  background-color: #2d2d2d; /* Darker background for output */
+  color: #f0f0f0; /* Light text for output */
+  border: 1px solid #444;
+  padding: 10px;
+  border-radius: 4px;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  min-height: 150px; /* Increased min-height */
+  max-height: 450px;
+  overflow-y: auto;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.9em;
+}
+
+.error-message {
+  background-color: #e74c3c;
+  color: white;
+  padding: 12px 15px; /* Slightly more padding */
+  border-radius: 4px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.loading-fullscreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-size: 1.5em;
+  color: #333;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 992px) { /* Adjust breakpoint for sidebar */
+  .sidebar {
+    width: 220px;
+  }
+  .main-content {
+    margin-left: 220px;
+  }
+}
+
+@media (max-width: 768px) {
+  .App {
+    flex-direction: column;
+  }
+  .sidebar {
+    width: 100%;
+    height: auto; /* Auto height for mobile */
+    position: static; /* Static for mobile */
+    border-bottom: 2px solid #34495e;
+  }
+  .main-content {
+    margin-left: 0;
+    padding: 15px;
+  }
+  .container {
+    flex-direction: column;
+    gap: 15px;
+  }
+  .panel {
+    min-width: 100%; /* Full width for panels on mobile */
+  }
+}
