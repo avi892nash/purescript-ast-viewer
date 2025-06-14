@@ -38,7 +38,7 @@ function App() {
         setError('');
         await Parser.init();
         const parser = new Parser();
-        const langPath = '/tree-sitter-purescript.wasm';
+        const langPath = './tree-sitter-purescript.wasm';
         const PureScript = await Language.load(langPath);
         parser.setLanguage(PureScript);
         
