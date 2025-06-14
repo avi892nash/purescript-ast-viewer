@@ -103,7 +103,6 @@ export function astToSExpression(node, options = {}) {
 // Simplified tree view
 export function astToTree(node, options = {}) {
   const { 
-    indent = 0, 
     showText = true, 
     useUnicode = true,
     isLast = true,
@@ -142,7 +141,7 @@ export function astToTree(node, options = {}) {
       if (fieldName && childTree) {
         const lines = childTree.split('\n');
         const firstLine = lines[0];
-        const connector = firstLine.match(/^(\s*)(└──|├──|\`--|--\s)/);
+        const connector = firstLine.match(/^(\s*)(└──|├──|`--|--\s)/);
         if (connector) {
           lines[0] = firstLine.replace(connector[2], connector[2] + fieldName + ': ');
           childTree = lines.join('\n');

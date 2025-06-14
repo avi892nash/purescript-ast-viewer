@@ -26,7 +26,7 @@ function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [isParsing, setIsParsing] = useState(false);
   const [isQuerying, setIsQuerying] = useState(false);
-  const [examples, setExamples] = useState(initialExamples);
+  const [examples] = useState(initialExamples);
   
   const parserRef = useRef(null);
   const purescriptLangRef = useRef(null);
@@ -55,7 +55,7 @@ function App() {
       }
     }
     initializeParser();
-  }, []);
+  }, [code]);
 
   const handleParse = async (currentCode, psParser, psLang) => {
     if (!psParser || !psLang) {
