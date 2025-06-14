@@ -12,6 +12,7 @@
   "dependencies": {
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
+    "rollup": "^4.43.0",
     "web-tree-sitter": "^0.25.5"
   },
   "devDependencies": {
