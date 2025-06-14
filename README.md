@@ -4,6 +4,8 @@
 
 A comprehensive web-based Tree-Sitter query dashboard for PureScript code analysis. Explore PureScript code structure, run custom queries, and learn Tree-Sitter patterns through an interactive interface.
 
+## 🚀 [**Try Live Demo**](https://avi892nash.github.io/purescript-ast-viewer/)
+
 ## Features
 
 - 🌳 **Interactive AST Visualization**: View PureScript code as S-expressions (AST)
