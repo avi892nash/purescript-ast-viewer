@@ -1,6 +1,6 @@
 # PureScript Tree-Sitter Viewer & Query Dashboard
 
-![PureScript AST Viewer](./logo.png)
+![PureScript AST Viewer](./public/logo.png)
 
 A comprehensive web-based Tree-Sitter query dashboard for PureScript code analysis. Explore PureScript code structure, run custom queries, and learn Tree-Sitter patterns through an interactive interface.
 
